@@ -6,5 +6,26 @@ const map = new mapboxgl.Map ({
     container: 'cult_attract',
     style: 'mapbox://styles/heisenzilla/cleg0trsv002001s135zy7mr3',
     center: [-79.347015, 43.651070],
-    zoom: 9,
+    zoom: 11,
 })
+
+//Adding GEOJSON source 
+map.on('load', () => {
+
+map.addSource ('Cultural_Attract', {
+    type:'geojson',
+    data: 'https://gabcalayan.github.io/Project_Code/points-of-interest.geojson'
+});
+
+//Drawing GEOJSON point as circles to try it out 
+map.addLayer({
+    id: 'Cu_At',
+    type: 'circle',
+    source: 'Cultural_Attract',
+    paint: {
+        'circle-radius': 8,
+        'circle-color': 'blue'
+    }
+   
+    });
+});
