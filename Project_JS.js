@@ -6,7 +6,7 @@ const map = new mapboxgl.Map ({
     container: 'cult_attract',
     style: 'mapbox://styles/heisenzilla/cleg0trsv002001s135zy7mr3',
     center: [-79.347015, 43.651070],
-    zoom: 11,
+    zoom: 10,
 })
 
 //Adding GEOJSON source 
@@ -23,8 +23,8 @@ map.addLayer({
     type: 'circle',
     source: 'Cultural_Attract',
     paint: {
-        'circle-radius': 8,
-        'circle-color': 'blue'
+        'circle-radius': 6,
+        'circle-color': '#333333'
     }
    
     });
